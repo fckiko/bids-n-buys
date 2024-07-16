@@ -8,6 +8,7 @@ import { MetaService } from './meta.service';
 })
 export class AppComponent implements OnInit {
 
+  title = 'Your Application Title';
   constructor(private metaService: MetaService) { }
 
   ngOnInit(): void {
