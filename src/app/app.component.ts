@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
     this.metaService.updateMetaTags({
       title: 'About Us - My Application',
       description: 'Learn more about our application and team.',
-      image: 'https://example.com/about-image.jpg',
-      url: 'https://example.com/about'
+      image: 'https://img.jlmconsulting.services/fit-in/256x155/sls_1720675394886Image_1.png',
+      url: 'https://dev.bidsnbuys.com'
     });
   }
 }
