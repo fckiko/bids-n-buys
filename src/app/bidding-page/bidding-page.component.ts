@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MetaService } from './meta.service';
+import { MetaService } from '../meta.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-bidding-page',
+  templateUrl: './bidding-page.component.html',
+  styleUrls: ['./bidding-page.component.scss']
 })
-export class AppComponent implements OnInit {
+export class BiddingPageComponent implements OnInit {
 
   constructor(private metaService: MetaService) { }
 
