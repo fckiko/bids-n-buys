@@ -137,21 +137,12 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
+            "browserTarget": "bids-n-buys:build:production",
+            "serverTarget": "bids-n-buyse:server:production",
             "routes": [
               "/"
             ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "bids-n-buys:build:production",
-              "serverTarget": "bids-n-buys:server:production"
-            },
-            "development": {
-              "browserTarget": "bids-n-buys:build:development",
-              "serverTarget": "bids-n-buys:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
+          }
         }
       }
     }
