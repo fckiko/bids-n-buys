@@ -8,14 +8,14 @@ import { MetaService } from './meta.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Your Application Title';
+  title = 'Main Page';
   constructor(private metaService: MetaService) { }
 // comment
   ngOnInit(): void {
     this.metaService.updateMetaTags({
-      title: 'About Us - My Application',
+      title: 'Sample',
       description: 'Learn more about our application and team.',
-      image: 'https://img.jlmconsulting.services/fit-in/256x155/sls_1720675394886Image_1.png',
+      image: 'https://img.jlmconsulting.services/fit-in/200x160/sls_1721270833526meta_offerring4.png',
       url: 'https://dev.bidsnbuys.com'
     });
   }
