@@ -138,7 +138,9 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
+              "/bidding-page",
+              "/buying-page",
+              "/offering-page"
             ]
           },
           "configurations": {
