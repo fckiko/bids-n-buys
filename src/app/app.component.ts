@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
   title = 'Your Application Title';
   constructor(private metaService: MetaService) { }
-
+// comment
   ngOnInit(): void {
     this.metaService.updateMetaTags({
       title: 'About Us - My Application',
