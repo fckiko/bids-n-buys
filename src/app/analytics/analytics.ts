@@ -79,6 +79,36 @@ export class ProductAnalytics {
   @prop({ type: Number, default: 0 })
   loginFails?: number;
 
+  @prop({ type: Number, default: 0 })
+  payment_methods?: number;
+
+  @prop({ type: Number, default: 0 })
+  createBids?: number;
+
+  @prop({ type: Number, default: 0 })
+  createOffer?: number;
+
+  @prop({ type: Number, default: 0 })
+  createBuy?: number;
+  
+  @prop({ type: Number, default: 0 })
+  updateProfile?: number;
+
+  @prop({ type: Number, default: 0 })
+  verifyEmail?: number;
+
+  @prop({ type: Number, default: 0 })
+  sendQR?: number;
+
+  @prop({ type: Number, default: 0 })
+  sendPin?: number;
+
+  @prop({ type: Number, default: 0 })
+  purchaseItem?: number;
+
+  @prop({ type: Number, default: 0 })
+  userProfile?: number;
+
   @prop({ type: String, default: "" })
   ipAddress?: string;
 
