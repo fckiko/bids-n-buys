@@ -96,7 +96,10 @@ export class ProductAnalytics {
 
   @prop({ type: Number, default: 0 })
   sendPin?: number;
-  
+
+  @prop({ type: Number, default: 0 })
+  viewItems?: number;
+
   @prop({ type: Number, default: 0 })
   createBids?: number;
 
