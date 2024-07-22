@@ -34,6 +34,9 @@ export class ProductAnalytics {
   @prop({ type: String, default: "" })
   googleTags?: string;
 
+  @prop({ type: String, default: "" })
+  getStarted?: string;
+
   @prop({ type: Date, required: true, default: Date.now })
   sessionStart!: Date;
 
@@ -83,15 +86,6 @@ export class ProductAnalytics {
   payment_methods?: number;
 
   @prop({ type: Number, default: 0 })
-  createBids?: number;
-
-  @prop({ type: Number, default: 0 })
-  createOffer?: number;
-
-  @prop({ type: Number, default: 0 })
-  createBuy?: number;
-  
-  @prop({ type: Number, default: 0 })
   updateProfile?: number;
 
   @prop({ type: Number, default: 0 })
@@ -102,6 +96,27 @@ export class ProductAnalytics {
 
   @prop({ type: Number, default: 0 })
   sendPin?: number;
+  
+  @prop({ type: Number, default: 0 })
+  createBids?: number;
+
+  @prop({ type: Number, default: 0 })
+  createOffer?: number;
+
+  @prop({ type: Number, default: 0 })
+  createBuy?: number;
+
+  @prop({ type: Number, default: 0 })
+  paypalMethod?: number;
+
+  @prop({ type: Number, default: 0 })
+  stripesMethod?: number;
+
+  @prop({ type: Number, default: 0 })
+  placeOrder?: number;
+
+  @prop({ type: Number, default: 0 })
+  checkOut?: number;
 
   @prop({ type: Number, default: 0 })
   purchaseItem?: number;
