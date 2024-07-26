@@ -31,6 +31,7 @@ const pushtoKinesis = async (doc: DocumentType<ProductAnalytics>) =>
 export class ProductAnalytics {
   @prop({ default: () => v4(), unique: true, type: String })
   analyticsId!: string;
+  
   @prop({ type: String, default: "" })
   googleTags?: string;
  
@@ -64,8 +65,8 @@ export class ProductAnalytics {
   @prop({ type: Number, default: 0 })
   signIn?: number;
  
-  @prop({ type: Number, default: 0 })
-  addToCart?: number;
+  @prop({ type: String, default: 0 })
+  addToCart?: string;
  
   @prop({ type: Number, default: 0 })
   biddingSales?: number;
@@ -76,8 +77,8 @@ export class ProductAnalytics {
   @prop({ type: Number, default: 0 })
   payment_methods?: number;
  
-  @prop({ type: Number, default: 0 })
-  updateProfile?: number;
+  @prop({ type: String, default: 0 })
+  updateProfile?: string;
  
   @prop({ type: Number, default: 0 })
   verifyEmail?: number;
@@ -88,17 +89,17 @@ export class ProductAnalytics {
   @prop({ type: Number, default: 0 })
   sendPin?: number;
  
-  @prop({ type: Number, default: 0 })
-  viewItems?: number;
+  @prop({ type: String, default: 0 })
+  viewItems?: string;
  
-  @prop({ type: Number, default: 0 })
-  createBids?: number;
+  @prop({ type: String, default: 0 })
+  createBids?: string;
  
   @prop({ type: Number, default: 0 })
   createOffer?: number;
  
-  @prop({ type: Number, default: 0 })
-  createBuy?: number;
+  @prop({ type: String, default: 0 })
+  createBuy?: string;
  
   @prop({ type: Number, default: 0 })
   paypalMethod?: number;
@@ -115,8 +116,8 @@ export class ProductAnalytics {
   @prop({ type: Number, default: 0 })
   purchaseItem?: number;
  
-  @prop({ type: Number, default: 0 })
-  userProfile?: number;
+  @prop({ type: String, default: 0 })
+  userProfile?: string;
   
   @prop({ type: Number, default: 0 })
   longitude?: number;
@@ -127,14 +128,41 @@ export class ProductAnalytics {
   productItemId!: Ref<any>;
 
 //Google Analytics End
+
+//Nika's Variable Start
  
   @prop({ default: () => STAGE,  type: String })
-  branch!: string
+  mostBids?: string;
+
+  @prop({ default: () => STAGE,  type: String })
+  leastBids?: string;
+
+  @prop({ default: () => STAGE,  type: String })
+  highestBids?: string;
+
+  @prop({ default: () => STAGE,  type: String })
+  lowestBids?: string;
+  
+  @prop({ default: () => STAGE,  type: String })
+  signupFail?: string;
+
+  @prop({ default: () => STAGE,  type: String })
+  forgotpasswordFail?: string;
+  
+  @prop({ default: () => STAGE,  type: String })
+  requestNewTotpFail?: string;
+
+
+//Nika's Variable End
+
+  @prop({ default: () => STAGE,  type: String })
+  branch!: string;
  
   @prop({ type: Number, default: 0 })
   login?: number;
  
   @prop({ type: Number, default: 0 })
+  
   logOut?: number;
  
   @prop({ type: Number, default: 0 })
