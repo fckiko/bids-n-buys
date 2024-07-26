@@ -26,17 +26,11 @@ const pushtoKinesis = async (doc: DocumentType<ProductAnalytics>) =>
     if (doc) return await pushtoKinesis(doc).then(console.log).catch(console.error);
 })
  
+// Google Analytics Start
 @modelOptions({ options: { allowMixed: 0, customName: "ProductAnalytics" } })
 export class ProductAnalytics {
   @prop({ default: () => v4(), unique: true, type: String })
   analyticsId!: string;
- 
-  @prop({ default: () => STAGE,  type: String })
-  branch!: string
- 
-  @prop({ required: true, type: Schema.Types.ObjectId })
-  productItemId!: Ref<any>;
- 
   @prop({ type: String, default: "" })
   googleTags?: string;
  
@@ -78,16 +72,7 @@ export class ProductAnalytics {
  
   @prop({ type: Number, default: 0 })
   buyingSales?: number;
- 
-  @prop({ type: Number, default: 0 })
-  login?: number;
- 
-  @prop({ type: Number, default: 0 })
-  logOut?: number;
- 
-  @prop({ type: Number, default: 0 })
-  loginFails?: number;
- 
+
   @prop({ type: Number, default: 0 })
   payment_methods?: number;
  
@@ -132,14 +117,31 @@ export class ProductAnalytics {
  
   @prop({ type: Number, default: 0 })
   userProfile?: number;
- 
-  @prop({ type: String, default: "" })
-  ipAddress?: string;
- 
+  
   @prop({ type: Number, default: 0 })
   longitude?: number;
   @prop({ type: Number, default: 0 })
   latitude?: number;
+  
+  @prop({ required: true, type: Schema.Types.ObjectId })
+  productItemId!: Ref<any>;
+
+//Google Analytics End
+ 
+  @prop({ default: () => STAGE,  type: String })
+  branch!: string
+ 
+  @prop({ type: Number, default: 0 })
+  login?: number;
+ 
+  @prop({ type: Number, default: 0 })
+  logOut?: number;
+ 
+  @prop({ type: Number, default: 0 })
+  loginFails?: number;
+ 
+  @prop({ type: String, default: "" })
+  ipAddress?: string;
   
   @prop({ type: Schema.Types.Mixed, default: {} })
   other?: Schema.Types.Mixed;
