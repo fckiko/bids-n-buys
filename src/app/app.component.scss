@@ -1,0 +1,124 @@
+.modal-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+    justify-content: center;
+    padding: 270px 80px;
+  }
+  
+  @media (max-width: 991px) {
+    .modal-container {
+      padding: 100px 20px;
+    }
+  }
+  
+  .password-modal {
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 8px 2px #c9c9c9;
+    display: flex;
+    width: 697px;
+    max-width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    padding: 54px 61px;
+  }
+  
+  @media (max-width: 991px) {
+    .password-modal {
+      padding: 40px 40px;
+    }
+  }
+  
+  .modal-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+  }
+  
+  @media (max-width: 991px) {
+    .modal-content {
+      max-width: 100%;
+    }
+  }
+  
+  .modal-title {
+    color: #000;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: 0.32px;
+    text-align: center;
+  }
+  
+  .password-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 1;
+    justify-content: start;
+  }
+  
+  .form-group {
+    margin-top: 24px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+  }
+  
+  .password-input {
+    align-self: stretch;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 12px 10px;
+    border: 1px solid #000;
+  }
+  
+  .button-group {
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    align-items: start;
+    gap: 40px;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.26px;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  
+  .cancel-button {
+    align-self: stretch;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    min-width: 240px;
+    color: #101010;
+    flex-grow: 1;
+    width: 214px;
+    padding: 10px;
+    border: 1px solid #000;
+  }
+  
+  .confirm-button {
+    align-self: stretch;
+    border-radius: 20px;
+    background-color: #8f48d2;
+    min-width: 240px;
+    color: #f5f5f5;
+    flex-grow: 1;
+    width: 214px;
+    padding: 10px;
+  }
+  

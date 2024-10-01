@@ -1,22 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from './meta.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
 
   title = 'Main Page';
-  constructor(private metaService: MetaService) { }
-// comment
-  ngOnInit(): void {
-    this.metaService.updateMetaTags({
-      title: 'Sample',
-      description: 'Learn more about our application and team.',
-      image: 'https://img.jlmconsulting.services/fit-in/200x160/sls_1721270833526meta_offerring4.png',
-      url: 'https://dev.bidsnbuys.com'
-    });
+  passwordForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.passwordForm = this.fb.group({
+      newPassword: ['', [Validators.required, Validators.minLength(8)]],
+      confirmPassword: ['', [Validators.required]]
+    }, { validator: this.passwordMatchValidator });
+  }
+
+  passwordMatchValidator(form: FormGroup) {
+    return form.get('newPassword')?.value === form.get('confirmPassword')?.value
+      ? null : { mismatch: true };
+  }
+
+  onSubmit() {
+    if (this.passwordForm.valid) {
+      console.log('Form Submitted:', this.passwordForm.value);
+    }
+  }
+
+  onCancel() {
+    this.passwordForm.reset();
   }
 }

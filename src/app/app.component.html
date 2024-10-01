@@ -1,6 +1,47 @@
-<router-outlet></router-outlet>
-
-<button routerLink="/bidding-page" onclick = "gtag('event', 'sign_in', {        'method': 'reference',        'content_type': 'website',        'content_id': 'default'    }); return false;"
-> >Go to Bidding Page</button>
-<button routerLink="/offering-page">Go to Offering Page</button>
-<button routerLink="/buying-page">Go to Buyin Page</button>
+<div class="modal-container">
+    <div class="password-modal">
+      <div class="modal-content">
+        <h2 class="modal-title">Create New Password</h2>
+        <form [formGroup]="passwordForm" (ngSubmit)="onSubmit()" class="password-form">
+          <div class="form-group">
+            <label for="newPassword" class="visually-hidden">New Password</label>
+            <input
+              type="password"
+              id="newPassword"
+              class="password-input"
+              placeholder="New Password"
+              formControlName="newPassword"
+              aria-label="New Password"
+            />
+            <div *ngIf="passwordForm.get('newPassword')?.touched && passwordForm.get('newPassword')?.invalid">
+              <small *ngIf="passwordForm.get('newPassword')?.errors?.['required']">Password is required.</small>
+              <small *ngIf="passwordForm.get('newPassword')?.errors?.['minlength']">
+                Password must be at least 8 characters.
+              </small>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="confirmPassword" class="visually-hidden">Confirm New Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              class="password-input"
+              placeholder="Confirm New Password"
+              formControlName="confirmPassword"
+              aria-label="Confirm New Password"
+            />
+            <div *ngIf="passwordForm.errors?.['mismatch'] && passwordForm.get('confirmPassword')?.touched">
+              <small>Passwords do not match.</small>
+            </div>
+          </div>
+  
+          <div class="button-group">
+            <button type="button" class="cancel-button" (click)="onCancel()">Cancel</button>
+            <button type="submit" class="confirm-button" [disabled]="passwordForm.invalid">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
